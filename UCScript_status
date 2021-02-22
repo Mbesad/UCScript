@@ -1,2 +1,4 @@
-In_production=yes
-Version=1.0.0
+In_production = yes
+Version = 1.0.0
+Author = Martin Besada
+Comments = First version 
