@@ -64,4 +64,4 @@ write-Host " "
 write-Host "--------------------------------------"
 write-Host "Script begins" -ForegroundColor green
 Write-Host "A script here..." 
-Write-Host "Version 2.1.2" 
+Write-Host "Version 2.1.3" 
