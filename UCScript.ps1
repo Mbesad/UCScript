@@ -4,11 +4,11 @@ Write-Output "Checking for version updates..."
 $skip_update = $false
 # Retrieve status file from Github 
 $stat = Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Mbesad/UCScript/main/UCScript_status" -TimeoutSec 10
-$content = $stat.Content
-$content = $content.split([Environment]::NewLine)
+$stat_content = $stat.Content
+$stat_content = $stat_content.split([Environment]::NewLine)
 $newver = $null
 # Search for script version in the status file
-ForEach ($element in $content)
+ForEach ($element in $stat_content)
 {
     if ($element -like "Version=*"){$newver = $element.split('=')[1]} 
 }
@@ -43,10 +43,19 @@ if (($newver[0] -eq $currver[0]) -And ($newver[1] -eq $currver[1]) -And ($newver
 
 if (!$skip_update)
 {
+#Retrieve new source code
 $script_file = Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Mbesad/UCScript/main/UCScript.ps1" -TimeoutSec 10 
 $code = $script_file.Content
-
+# Replace source code
+$code| Set-Content .\UCScript.ps1
+$stat_content| Set-Content .\UCScript_status.txt
+Write-Output "Script updated. Please run again."
+}
+else 
+{
+Write-Output "No update available. Continuing..."
+}
 ###################################################################################################################
 ################################################ SCRIPT BEGINS ####################################################
 
-## CODE 2.0
+# Code 2.1.1
