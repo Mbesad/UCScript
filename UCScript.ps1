@@ -44,12 +44,14 @@ if (($newver[0] -eq $currver[0]) -And ($newver[1] -eq $currver[1]) -And ($newver
 if (!$skip_update)
 {
 #Retrieve new source code
+Write-Host "Updating..." -ForegroundColor green
 $script_file = Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Mbesad/UCScript/main/UCScript.ps1" -TimeoutSec 10 
 $code = $script_file.Content
 # Replace source code
 $code| Set-Content .\UCScript.ps1
 $stat_content| Set-Content .\UCScript_status.txt
-Write-Output "Script updated. Please run again."
+Write-Host "Update complete. Please re-run." -ForegroundColor green
+Exit
 }
 else 
 {
@@ -58,4 +60,5 @@ Write-Output "No update available. Continuing..."
 ###################################################################################################################
 ################################################ SCRIPT BEGINS ####################################################
 
-# Code 2.1.1
+Write-Host "Hello world" 
+Write-Host "Version 2.1.1" 
