@@ -58,7 +58,10 @@ else
 Write-Output "No update available. Continuing..."
 }
 ###################################################################################################################
-################################################ SCRIPT BEGINS ####################################################
 
-Write-Host "Hello world" 
-Write-Host "Version 2.1.1" 
+################################################ SCRIPT BEGINS ####################################################
+write-Host " "
+write-Host "--------------------------------------"
+write-Host "Script begins" -ForegroundColor green
+Write-Host "A script here..." 
+Write-Host "Version 2.1.2" 
