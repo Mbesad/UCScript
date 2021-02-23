@@ -67,7 +67,7 @@ Exit
 }
 else 
 {
-Write-Output "No update available. Continuing..."
+Write-Output "Continuing..."
 }
 ###################################################################################################################
 
