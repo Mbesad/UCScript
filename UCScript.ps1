@@ -51,8 +51,6 @@ $skip_update = $host.ui.PromptForChoice($title, $Message, $options, 0)
 
 }
 
-
-
 if (!$skip_update)
 {
 #Retrieve new source code
@@ -78,3 +76,37 @@ write-Host "Script begins" -ForegroundColor green
 Write-Host "A script here..." 
 Write-Host "Version 2.1.4" 
 
+###################################################################################################################
+
+# SIG # Begin signature block
+# MIIFdgYJKoZIhvcNAQcCoIIFZzCCBWMCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
+# gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUi/mdiWZ27NpG3+N5yrEy5YaS
+# If+gggMOMIIDCjCCAfKgAwIBAgIQHwtBe56H8LJP+qjpIFCEVTANBgkqhkiG9w0B
+# AQUFADAdMRswGQYDVQQDDBJMb2NhbCBDb2RlIFNpZ25pbmcwHhcNMjEwMjIzMjEy
+# MDM1WhcNMjIwMjIzMjE0MDM1WjAdMRswGQYDVQQDDBJMb2NhbCBDb2RlIFNpZ25p
+# bmcwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDZdn2zaZXh7wQY0OxR
+# 5s8/WSp6BlQivZdqqmAE/NvCzclTnDVjN4QXEHim6acoswfQ+1fJ5/izCJM2OqNy
+# /qnxpBsqDkrPZL3ZMKHwR0p1PCzTQpnDk1Jq6pUbjFrqXGiQfbrCNI9uEepMKNMw
+# 2um2VTdPA3cB9LLrXSaXoUpGXT7Un22RVfQuOpCUzzYRCS3QenaidFA99nD48fwn
+# Y5fa3UArBvcGg4b2vjVkaPepZSg+u99QR5wOCbUUYYHs1+Vy/IV9zqURrNTY3X2s
+# u16hn/DZdMdZuFVKh1+f8a8YP7KjXjvOUGnVccDjQc6yJfJqxnFMFt7BLcjNnea1
+# 4Uu5AgMBAAGjRjBEMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggrBgEFBQcD
+# AzAdBgNVHQ4EFgQUe94H2YQF6oo8uDc6O9/oJshyBXcwDQYJKoZIhvcNAQEFBQAD
+# ggEBAMLGXC4FcVtr+HAw4gyHVW/IiYBPl4sDqdgGqvidm+K1i81zMDE6slcrhUpK
+# xu1Wq9jQCnkmCOus2z37DuBZCWUS2uznThQxG75OaHTxoCmlpo7SZ3VPF3LJFToz
+# JhqJ3zfzvI85wYyYPW6Tg+zq78DFB7KcZRS0gMiTrTem7NPNUg6NPCgFdIWvSA0c
+# MVdpqQ2Tr8dsYUeQcAsfgkpDltg8PFu1duE1vk/KxKsx77uJDP2/QCyuoqSVcovS
+# R2V2ApzenVYY9viIOzVcgMCXyobuj9Okr8JeL8Lp6qPLQEcV1rBxIEdgfl3Of72H
+# 9Jzrw5G9w49dax7x2pMRU+zakpkxggHSMIIBzgIBATAxMB0xGzAZBgNVBAMMEkxv
+# Y2FsIENvZGUgU2lnbmluZwIQHwtBe56H8LJP+qjpIFCEVTAJBgUrDgMCGgUAoHgw
+# GAYKKwYBBAGCNwIBDDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGC
+# NwIBBDAcBgorBgEEAYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQx
+# FgQUmzlBTRzgf5C9u0gZuVqx/I9+9hQwDQYJKoZIhvcNAQEBBQAEggEAiylJZ7HP
+# +75yiOWsZfPx1/JNe/VMor7qmA8u1N9Otk2vOWcXFdud0muTj3PEZRl7Z5uWeC3l
+# vVBoEEf6qXG70QWNbpJmWCcsFrpU5QNPM+kUGAFjQwFgzNRFmg5ANRDOb3i1G8NZ
+# 8J7G+dov3voDNyf9CQUpACcxKiOSwDDDyPxlRcNPlXUBSWt1HnCdqAllZABGlwoh
+# 5KVe/r8Yd2YBp8Z5Cq3H8iQCFjVpqteDGaz1AtFz4ryEspmqyVIFjW9yIdRoY6sd
+# LbmyrLzjxVeJiv1K6ixV6xsdRvqRQtNCp3ftLdq9g7eb27R4pfnj/ogZMAfoKN83
+# T2MRWuIugjl1jw==
+# SIG # End signature block
