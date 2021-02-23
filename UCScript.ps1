@@ -40,6 +40,18 @@ if (($newver[0] -eq $currver[0]) -And ($newver[1] -lt $currver[1])) {$skip_updat
 if (($newver[0] -eq $currver[0]) -And ($newver[1] -eq $currver[1]) -And ($newver[2] -le $currver[2])) {$skip_update = $true}
 }
 
+if (!$skip_update)
+{
+$title = 'Update Available'
+$Message = 'A newer version of this script is available on Github. Would you like to update it?'
+$yes = New-Object -TypeName System.Management.Automation.Host.ChoiceDescription -ArgumentList '&Yes', 'Download the newer version and update the script.'
+$no = New-Object -TypeName System.Management.Automation.Host.ChoiceDescription -ArgumentList '&No', 'No, thanks.'
+$options = [System.Management.Automation.Host.ChoiceDescription[]]($yes, $no)
+$skip_update = $host.ui.PromptForChoice($title, $Message, $options, 0) 
+
+}
+
+
 
 if (!$skip_update)
 {
@@ -64,4 +76,5 @@ write-Host " "
 write-Host "--------------------------------------"
 write-Host "Script begins" -ForegroundColor green
 Write-Host "A script here..." 
-Write-Host "Version 2.1.3" 
+Write-Host "Version 2.1.4" 
+
