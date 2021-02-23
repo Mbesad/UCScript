@@ -14,8 +14,8 @@ ForEach ($element in $stat_content)
 }
 If ($newver -eq $null)
 {
-Write-Output "Could not get current version on Github. Continuing..."
-$skip_update = $true
+    Write-Output "Could not get current version on Github. Continuing..."
+    $skip_update = $true
 }
 # Retrieve status file from local machine
 $curr_status_file = Get-Content .\UCScript_status.txt -Raw
@@ -25,47 +25,47 @@ ForEach ($element in $curr_status_file)
 {
     if ($element -like "Version=*"){$currver = $element.split('=')[1]} 
 }
-If ($currver -eq $null){
-Write-Output "Could not get current version on local machine. Continuing..."
-$skip_update = $true
+If ($currver -eq $null)
+{
+    Write-Output "Could not get current version on local machine. Continuing..."
+    $skip_update = $true
 }
 
 #Compare versions#
 if (!$skip_update)
 {
-$newver = $newver.split('.')
-$currver = $currver.split('.')
-if ($newver[0] -lt $currver[0]) {$skip_update = $true}
-if (($newver[0] -eq $currver[0]) -And ($newver[1] -lt $currver[1])) {$skip_update = $true}
-if (($newver[0] -eq $currver[0]) -And ($newver[1] -eq $currver[1]) -And ($newver[2] -le $currver[2])) {$skip_update = $true}
+    $newver = $newver.split('.')
+    $currver = $currver.split('.')
+    if ($newver[0] -lt $currver[0]) {$skip_update = $true}
+    if (($newver[0] -eq $currver[0]) -And ($newver[1] -lt $currver[1])) {$skip_update = $true}
+    if (($newver[0] -eq $currver[0]) -And ($newver[1] -eq $currver[1]) -And ($newver[2] -le $currver[2])) {$skip_update = $true}
 }
 
 if (!$skip_update)
 {
-$title = 'Update Available'
-$Message = 'A newer version of this script is available on Github. Would you like to update it?'
-$yes = New-Object -TypeName System.Management.Automation.Host.ChoiceDescription -ArgumentList '&Yes', 'Download the newer version and update the script.'
-$no = New-Object -TypeName System.Management.Automation.Host.ChoiceDescription -ArgumentList '&No', 'No, thanks.'
-$options = [System.Management.Automation.Host.ChoiceDescription[]]($yes, $no)
-$skip_update = $host.ui.PromptForChoice($title, $Message, $options, 0) 
-
+    $title = 'Update Available'
+    $Message = 'A newer version of this script is available on Github. Would you like to update it?'
+    $yes = New-Object -TypeName System.Management.Automation.Host.ChoiceDescription -ArgumentList '&Yes', 'Download the newer version and update the script.'
+    $no = New-Object -TypeName System.Management.Automation.Host.ChoiceDescription -ArgumentList '&No', 'No, thanks.'
+    $options = [System.Management.Automation.Host.ChoiceDescription[]]($yes, $no)
+    $skip_update = $host.ui.PromptForChoice($title, $Message, $options, 0) 
 }
 
 if (!$skip_update)
 {
-#Retrieve new source code
-Write-Host "Updating..." -ForegroundColor green
-$script_file = Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Mbesad/UCScript/main/UCScript.ps1" -TimeoutSec 10 
-$code = $script_file.Content
-# Replace source code
-$code| Set-Content .\UCScript.ps1
-$stat_content| Set-Content .\UCScript_status.txt
-Write-Host "Update complete. Please re-run." -ForegroundColor green
-Exit
+    #Retrieve new source code
+    Write-Host "Updating..." -ForegroundColor green
+    $script_file = Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Mbesad/UCScript/main/UCScript.ps1" -TimeoutSec 10 
+    $code = $script_file.Content
+    # Replace source code
+    $code| Set-Content .\UCScript.ps1
+    $stat_content| Set-Content .\UCScript_status.txt
+    Write-Host "Update complete. Please re-run." -ForegroundColor green
+    Exit
 }
 else 
 {
-Write-Output "Continuing..."
+    Write-Output "Continuing..."
 }
 ###################################################################################################################
 
